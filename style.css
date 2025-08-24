@@ -1,0 +1,230 @@
+:root{
+    ---orange:#FF4500;
+    ---pink:#EE82EE;
+    ---white:#ffff;
+    ---black:#0000;
+    ---creme:#FFFFF0;
+    ---Chocolat:#8B4513;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    box-sizing: inherit;
+    font-size: 62.5%;
+}
+body{
+    font-family: "Montserrat",sans-serif;
+    max-width: 100vw;
+    background-color:var(---creme);
+    color: black;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   height: 50px;
+    padding: 15px;
+    background-color: transparent;
+    color: white;
+}
+header a{
+    text-decoration: none;
+    margin-left:10px;
+    color: #ffff;
+}
+#logo{
+    text-decoration: none;
+}
+#logo:hover{
+    text-decoration: none;
+    color: white;
+}
+b{
+    color:var(---Chocolat);
+    font-size: 30px;
+}
+header a:hover{
+    text-decoration: underline;
+    color: var(---Chocolat);
+    text-underline-offset: 10px;
+}
+.feuille{
+    display: flex;
+}
+#premiere{
+    height: 100vh;
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+#premiere #videoIntro{
+    z-index:-100;
+    width: 100%;
+    position: absolute;
+}
+#premeire #ElementsEnDessus{
+    z-index: 1;
+}
+#premiereFeuille{
+    display: flex;
+    justify-content: end;
+}
+#premiereFeuille div{
+    width: 50%;
+    margin-right:30px;
+    height: 100%;
+    margin-top: 25px;
+}
+#premiereFeuille div h1{
+    font-family: "Climate Crisis", sans-serif;
+    color: var(---creme);
+    text-align: right;
+}
+/*#PremiereFeuille Pour les Ecran plus petits*/
+@media screen and (max-width:480px){
+    #premiere{
+        max-height: 26vh;
+    }
+     #deuxiemeFeuille #nosProduits{
+        font-size: 20px;
+    }
+}
+#deuxiemeFeuille{
+    text-align: center;
+    height: 120vh;
+    background-color: var(---creme);
+    padding-top: 50px;
+    font-family: "Climate Crisis", sans-serif;
+}
+#deuxiemeFeuille section{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#deuxiemeFeuille section div{
+    height: 300px;
+    width: 250px;
+    border-radius: 35px;
+    border: 1px solid whitesmoke;
+    margin-top: 20px;
+}
+#deuxiemeFeuille section div a{
+    display: block;
+    height: 60px;
+    text-align: center;
+    align-content: center;
+    width: 100%;
+    text-decoration: none;
+    background-color: var(---Chocolat);
+    color: #ffff;
+    font-size: 30px;
+}
+#deuxiemeFeuille section img{
+    border: none;
+    width: 100%;
+}
+#nosProduits{
+     font-family: "Climate Crisis", sans-serif;
+     font-size: 80px;
+     color: #8B4513;
+}
+#troisiemeFeuille{
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+    background-color: black;
+}
+#troisiemeFeuille section{
+    width: 50%;
+    text-align: center;
+    align-content: center;
+}
+#troisiemeFeuille section h1{
+      font-family: "Climate Crisis", sans-serif;
+      font-size: 78px;
+      color: var(---creme);
+}
+#troisiemeFeuille section img{
+    border-radius: 50%;
+    border: 1px solid var(---creme);
+    height: 60%;
+    width: 60%;
+}
+#troisiemeFeuille iframe{
+    height: 100%;
+    width: 80%;
+    border: 1px solid whitesmoke;
+
+}
+#QuatriemFeuille{
+    height: 60vh;
+    background-color: var(---creme);
+    font-size: 15px;
+   padding: 20px;
+   display: flex;
+   flex-wrap: wrap;
+}
+#QuatriemFeuille section{
+    width: 50%;
+    align-items: center;
+}
+#QuatriemFeuille section div{
+    height: 80px;
+    border: 1px solid whitesmoke;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+#QuatriemFeuille section img{
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+#CinquiemeFeuille{
+    display: flex;
+    height: 80vh;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid whitesmoke;
+    align-items: center;
+    max-width: 100vw;
+}
+#CinquiemeFeuille video{
+    height: 80%;
+    width: 80%;
+    border-radius: 35px;
+}
+#CinquiemeFeuille div ul li{
+   font-family: "Climate Crisis", sans-serif;
+   font-size: 50px;
+   color: #A0522D;
+}
+#CinquiemeFeuille #caracteristiques{
+    text-align: center;
+    align-content: center;
+    height: 90%;
+    width: 100%;
+    max-width: 35%;
+
+}
+footer{
+   display: flex;
+   align-items: center;
+   height: 120px;
+   background-color: black;
+    justify-content: center;
+}
+footer img{
+    height: 110px;
+    width: 190px;
+}
+#page2 a{
+    color: black;
+}
+
