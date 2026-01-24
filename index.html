@@ -23,7 +23,12 @@
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-cursive text-pink-600">JaneCake</a>
-            <div class="hidden md:flex space-x-8 font-medium">
+            
+            <button id="menu-btn" class="md:hidden border border-gray-200 rounded-lg px-3 py-2 text-gray-600 hover:bg-gray-50 transition focus:outline-none">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <div class="hidden md:flex space-x-8 font-medium items-center">
                 <a href="#home" class="hover:text-pink-500 transition">Accueil</a>
                 <a href="#about" class="hover:text-pink-500 transition">À propos</a>
                 <a href="#creations" class="hover:text-pink-500 transition">Nos produits</a>
@@ -31,6 +36,16 @@
                 <a href="#faq" class="hover:text-pink-500 transition">FAQ</a>
                 <a href="#contact" class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition shadow-lg">Commander</a>
             </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-pink-50 px-6 py-8 space-y-6 shadow-2xl absolute w-full left-0 animate-fade-in-down">
+            <a href="#home" class="mobile-link block text-xl font-semibold text-gray-800 hover:text-pink-500">Accueil</a>
+            <a href="#about" class="mobile-link block text-xl font-semibold text-gray-800 hover:text-pink-500">À propos</a>
+            <a href="#creations" class="mobile-link block text-xl font-semibold text-gray-800 hover:text-pink-500">Nos produits</a>
+            <a href="#avis" class="mobile-link block text-xl font-semibold text-gray-800 hover:text-pink-500">Avis</a>
+            <a href="#faq" class="mobile-link block text-xl font-semibold text-gray-800 hover:text-pink-500">FAQ</a>
+            <hr class="border-pink-50">
+            <a href="#contact" class="mobile-link block bg-pink-500 text-white text-center px-5 py-4 rounded-2xl font-black text-lg shadow-lg">Commander maintenant</a>
         </div>
     </nav>
 
@@ -293,4 +308,29 @@
     </footer>
 
 </body>
+
+<script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const links = document.querySelectorAll('.mobile-link');
+
+    // Basculer l'affichage du menu
+    btn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+        // Change l'icône si tu veux (optionnel)
+        const icon = btn.querySelector('i');
+        icon.classList.toggle('fa-bars');
+        icon.classList.toggle('fa-times');
+    });
+
+    // Fermer le menu au clic sur un lien
+    links.forEach(link => {
+        link.addEventListener('click', () => {
+            menu.classList.add('hidden');
+            const icon = btn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        });
+    });
+</script>
 </html>
