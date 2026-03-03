@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JaneCake | Délices Artisanaux</title>
+    <link rel="icon" type="image/x-icon" href="./static/img/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
@@ -21,8 +22,10 @@
 <body class="bg-pink-50 text-gray-800">
 
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-cursive text-pink-600">JaneCake</a>
+        <div class="max-w-6xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-cursive text-pink-600 block h-full relative">
+                <img src="./static/img/logo.png" alt="" srcset="" class="h-[98%] w-28">
+            </a>
             
             <button id="menu-btn" class="md:hidden border border-gray-200 rounded-lg px-3 py-2 text-gray-600 hover:bg-gray-50 transition focus:outline-none">
                 <i class="fas fa-bars text-xl"></i>
@@ -34,7 +37,7 @@
                 <a href="#creations" class="hover:text-pink-500 transition">Nos produits</a>
                 <a href="#avis" class="hover:text-pink-500 transition">Avis</a>
                 <a href="#faq" class="hover:text-pink-500 transition">FAQ</a>
-                <a href="https://wa.me/22892449183" target="_blank" class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition shadow-lg">Commander</a>
+                <a href="https://wa.me/22892449183" target="_blank" class="bg-pink-500 text-white px-5 py-2 rounded-full hover:bg-pink-600 transition shadow-lg">Commandez au +228 9244 9183</a>
             </div>
         </div>
 
