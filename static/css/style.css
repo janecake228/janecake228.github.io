@@ -1,6 +1,31 @@
+body { font-family: 'Poppins', sans-serif; }
+.font-cursive { font-family: 'Dancing Script', cursive; }
+.cake-float { animation: floating 3s ease-in-out infinite; }
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Texte : */
+.text-brand-pink {
+    color: #F205CB;
+}
+
+/*Fond : */
+.bg-brand-pink {
+    background-color: #F205CB;
+}
+
+/*Bordure : */
+.border-brand-pink {
+    border-color: #F205CB;
+}
+
+/*
 :root{
     ---orange:#FF4500;
-    ---pink:#EE82EE;
+    ---pink:#F205CB;
     ---white:#ffff;
     ---black:#0000;
     ---creme:#FFFFF0;
@@ -84,7 +109,7 @@ header a:hover{
     color: var(---creme);
     text-align: right;
 }
-/*#PremiereFeuille Pour les Ecran plus petits*/
+#PremiereFeuille Pour les Ecran plus petits
 @media screen and (max-width:480px){
     #premiere{
         max-height: 26vh;
@@ -227,4 +252,4 @@ footer img{
 #page2 a{
     color: black;
 }
-
+*/
