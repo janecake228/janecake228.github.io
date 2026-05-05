@@ -7,6 +7,10 @@ body { font-family: 'Poppins', sans-serif; }
     100% { transform: translateY(0px); }
 }
 
+
+/**********************************************************************
+COULEUR DE MARQUE 1 : ROSE #F205CB
+**********************************************************************/
 /* Texte : */
 .text-brand-pink {
     color: #F205CB;
@@ -20,6 +24,32 @@ body { font-family: 'Poppins', sans-serif; }
 /*Bordure : */
 .border-brand-pink {
     border-color: #F205CB;
+}
+
+/**********************************************************************
+COULEUR DE MARQUE 1 : ORANGE #F24607
+**********************************************************************/
+/* Texte : */
+.text-brand-orange {
+    color: #F24607;
+}
+
+/*Fond : */
+.bg-brand-orange {
+    background-color: #F24607;
+}
+
+/*Bordure : */
+.border-brand-orange {
+    border-color: #F24607;
+}
+
+.group-hover:bg-brand-orange {
+    background-color: #F24607;
+}
+
+.group-hover:text-brand-orange {
+    color: #F24607;
 }
 
 /*
