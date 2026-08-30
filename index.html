@@ -195,126 +195,211 @@
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Gâteaux -->
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183?text=Nouveau%20message%20depuis%20janecake228.com%0A%0ASujet%3A%20G%C3%A2teaux%20d'anniversaire%0A%0AJe%20veux%20un%20G%C3%A2teaux%20d'anniversaire%20digne%20pour%20mon%20anniversaire%2C%20sur%20mesure%20avec%20des%20saveurs%20traditionnelle%0A%0A---%0ANom%3A%20%22%22%0AT%C3%A9l%C3%A9phone%3A%20%22%22%0ADate%20%3A%20%22%22%0ALieu%20de%20Livraison%3A%20%22%22" target="_blank">
+                    <div class="relative overflow-hidden">
                         <img src="static/img/catalogue-wedding-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux d'anniversaire</h3>
-                            <p class="text-gray-600 text-sm">Des créations sur mesure pour souffler vos bougies.</p>
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteaux d\'anniversaire', 'static/img/catalogue-wedding-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteaux d\'anniversaire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux d'anniversaire</h3>
+                        <p class="text-gray-600 text-sm">Des créations sur mesure pour souffler vos bougies.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-birthday-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux de mariage</h3>
-                            <p class="text-gray-600 text-sm">L'excellence et l'élégance pour célébrer votre grand jour.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-birthday-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteaux de mariage', 'static/img/catalogue-birthday-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteaux de mariage')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux de mariage</h3>
+                        <p class="text-gray-600 text-sm">L'excellence et l'élégance pour célébrer votre grand jour.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-black-forest.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Forêt Noire</h3>
-                            <p class="text-gray-600 text-sm">Le grand classique au chocolat et cerises fondantes.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-black-forest.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Forêt Noire', 'static/img/catalogue-black-forest.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Forêt Noire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Forêt Noire</h3>
+                        <p class="text-gray-600 text-sm">Le grand classique au chocolat et cerises fondantes.</p>
+                    </div>
                 </div>
                 <!-- Mimi -->
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-tiramisu.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Tiramisu</h3>
-                            <p class="text-gray-600 text-sm">Une douceur crémeuse aux notes intenses de café.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-tiramisu.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Tiramisu', 'static/img/catalogue-tiramisu.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Tiramisu')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Tiramisu</h3>
+                        <p class="text-gray-600 text-sm">Une douceur crémeuse aux notes intenses de café.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-box-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Box Cakes</h3>
-                            <p class="text-gray-600 text-sm">Le coffret idéal à offrir ou à emporter partout.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-box-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Box Cakes', 'static/img/catalogue-box-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Box Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Box Cakes</h3>
+                        <p class="text-gray-600 text-sm">Le coffret idéal à offrir ou à emporter partout.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-mousse-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteau Mousse</h3>
-                            <p class="text-gray-600 text-sm">Une texture aérienne et légère qui fond en bouche.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-mousse-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteau Mousse', 'static/img/catalogue-mousse-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteau Mousse')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteau Mousse</h3>
+                        <p class="text-gray-600 text-sm">Une texture aérienne et légère qui fond en bouche.</p>
+                    </div>
                 </div>
                 <!-- Cakes -->
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-layer-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Layer Cakes</h3>
-                            <p class="text-gray-600 text-sm">Des couches de gourmandise au visuel spectaculaire.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-layer-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Layer Cakes', 'static/img/catalogue-layer-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Layer Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Layer Cakes</h3>
+                        <p class="text-gray-600 text-sm">Des couches de gourmandise au visuel spectaculaire.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-cup-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Cup Cakes</h3>
-                            <p class="text-gray-600 text-sm">De petites bouchées décorées, aussi jolies que bonnes.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-cup-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cup Cakes', 'static/img/catalogue-cup-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cup Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cup Cakes</h3>
+                        <p class="text-gray-600 text-sm">De petites bouchées décorées, aussi jolies que bonnes.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-donuts.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Donuts</h3>
-                            <p class="text-gray-600 text-sm">Moelleux, colorés et parfaits pour le goûter.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-donuts.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Donuts', 'static/img/catalogue-donuts.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Donuts')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Donuts</h3>
+                        <p class="text-gray-600 text-sm">Moelleux, colorés et parfaits pour le goûter.</p>
+                    </div>
                 </div>
                 <!-- Petits Fours -->
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-simple-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Cakes</h3>
-                            <p class="text-gray-600 text-sm">Le goût authentique d'un cake traditionnel fait maison.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-simple-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cakes', 'static/img/catalogue-simple-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cakes</h3>
+                        <p class="text-gray-600 text-sm">Le goût authentique d'un cake traditionnel fait maison.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-marbre-cake.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Cake Marbré</h3>
-                            <p class="text-gray-600 text-sm">L'accord parfait entre la vanille douce et le cacao.</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-marbre-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cake Marbré', 'static/img/catalogue-marbre-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cake Marbré')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cake Marbré</h3>
+                        <p class="text-gray-600 text-sm">L'accord parfait entre la vanille douce et le cacao.</p>
+                    </div>
                 </div>
                 <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
-                    <a href="https://wa.me/22892449183" target="_blank">
-                        <img src="static/img/catalogue-samoussa.jpg"
-                            class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <div class="p-6 text-center">
-                            <h3 class="text-xl font-bold mb-2 text-brand-orange">Mignardises</h3>
-                            <p class="text-gray-600 text-sm">Un assortiment de saveurs salées et sucrées pour vos événements</p>
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-samoussa.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Mignardises', 'static/img/catalogue-samoussa.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Mignardises')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
                         </div>
-                    </a>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Mignardises</h3>
+                        <p class="text-gray-600 text-sm">Un assortiment de saveurs salées et sucrées pour vos événements</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -378,35 +463,213 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-pink-100 hover:shadow-md transition duration-300">
-                    <div class="flex text-yellow-400 mb-4 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                <!-- Gâteaux -->
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-wedding-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteaux d\'anniversaire', 'static/img/catalogue-wedding-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteaux d\'anniversaire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
-                    <p class="text-gray-600 italic">"Hello dame Jane, les commandes sont parfaites tous le monde a kiffé
-                        et c’était très bien présenté. Tu connais ton travail. 🤲🏽😘"</p>
-                    <div class="mt-6 font-bold text-gray-800">— John.</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux d'anniversaire</h3>
+                        <p class="text-gray-600 text-sm">Des créations sur mesure pour souffler vos bougies.</p>
+                    </div>
                 </div>
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-md border border-pink-200 md:scale-105 z-10 transition duration-300">
-                    <div class="flex text-yellow-400 mb-4 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-birthday-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteaux de mariage', 'static/img/catalogue-birthday-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteaux de mariage')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
-                    <p class="text-gray-600 italic">"Un petit coucou et te dire merci pour le gâteau d'anniversaire
-                        c'est bien fait tél que je l'ai demandé merci."</p>
-                    <div class="mt-6 font-bold text-gray-800">— Client Anonyme.</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux de mariage</h3>
+                        <p class="text-gray-600 text-sm">L'excellence et l'élégance pour célébrer votre grand jour.</p>
+                    </div>
                 </div>
-                <div
-                    class="bg-white p-8 rounded-3xl shadow-sm border border-pink-100 hover:shadow-md transition duration-300">
-                    <div class="flex text-yellow-400 mb-4 text-sm">
-                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-black-forest.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Forêt Noire', 'static/img/catalogue-black-forest.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Forêt Noire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
                     </div>
-                    <p class="text-gray-600 italic">"Wow merci tata le gâteau était trop bon ❤️❤️❤️❤️. J’ai grave aimé.
-                        Je vous recommanderai c’est sure. Merciiii"</p>
-                    <div class="mt-6 font-bold text-gray-800">— Client Anonyme.</div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Forêt Noire</h3>
+                        <p class="text-gray-600 text-sm">Le grand classique au chocolat et cerises fondantes.</p>
+                    </div>
+                </div>
+                <!-- Mimi -->
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-tiramisu.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Tiramisu', 'static/img/catalogue-tiramisu.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Tiramisu')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Tiramisu</h3>
+                        <p class="text-gray-600 text-sm">Une douceur crémeuse aux notes intenses de café.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-box-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Box Cakes', 'static/img/catalogue-box-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Box Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Box Cakes</h3>
+                        <p class="text-gray-600 text-sm">Le coffret idéal à offrir ou à emporter partout.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-mousse-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Gâteau Mousse', 'static/img/catalogue-mousse-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Gâteau Mousse')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteau Mousse</h3>
+                        <p class="text-gray-600 text-sm">Une texture aérienne et légère qui fond en bouche.</p>
+                    </div>
+                </div>
+                <!-- Cakes -->
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-layer-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Layer Cakes', 'static/img/catalogue-layer-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Layer Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Layer Cakes</h3>
+                        <p class="text-gray-600 text-sm">Des couches de gourmandise au visuel spectaculaire.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-cup-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cup Cakes', 'static/img/catalogue-cup-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cup Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cup Cakes</h3>
+                        <p class="text-gray-600 text-sm">De petites bouchées décorées, aussi jolies que bonnes.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-donuts.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Donuts', 'static/img/catalogue-donuts.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Donuts')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Donuts</h3>
+                        <p class="text-gray-600 text-sm">Moelleux, colorés et parfaits pour le goûter.</p>
+                    </div>
+                </div>
+                <!-- Petits Fours -->
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-simple-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cakes', 'static/img/catalogue-simple-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cakes</h3>
+                        <p class="text-gray-600 text-sm">Le goût authentique d'un cake traditionnel fait maison.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-marbre-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Cake Marbré', 'static/img/catalogue-marbre-cake.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Cake Marbré')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cake Marbré</h3>
+                        <p class="text-gray-600 text-sm">L'accord parfait entre la vanille douce et le cacao.</p>
+                    </div>
+                </div>
+                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+                    <div class="relative overflow-hidden">
+                        <img src="static/img/catalogue-samoussa.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
+                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
+                            <button onclick="openModal('Mignardises', 'static/img/catalogue-samoussa.jpg')" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button onclick="prefillOrder('Commande : Mignardises')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
+                                <i class="fas fa-cart-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Mignardises</h3>
+                        <p class="text-gray-600 text-sm">Un assortiment de saveurs salées et sucrées pour vos événements</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -583,6 +846,44 @@
 
 </body>
 
+
+    <!-- Modal Details -->
+    <div id="detailsModal" class="fixed inset-0 z-[100] hidden bg-black/80 flex items-center justify-center backdrop-blur-sm p-4 transition-opacity">
+        <div class="bg-white rounded-3xl w-full max-w-4xl max-h-[90vh] overflow-hidden flex flex-col md:flex-row relative animate-fade-in-down shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-500 hover:text-brand-pink z-50 text-2xl w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-md transition transform hover:scale-110">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <!-- Image Gallery Slider -->
+            <div class="w-full md:w-1/2 relative bg-pink-50 h-[300px] md:h-[500px]">
+                <img id="modalMainImage" src="" class="w-full h-full object-cover">
+                <button onclick="prevImage()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-brand-pink hover:text-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button onclick="nextImage()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-brand-pink hover:text-white text-gray-800 w-10 h-10 rounded-full flex items-center justify-center shadow-lg transition transform hover:scale-110">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                <!-- Thumbnails -->
+                <div id="modalThumbnails" class="absolute bottom-4 left-0 w-full flex justify-center space-x-3 px-4">
+                    <!-- Injected via JS -->
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center bg-white overflow-y-auto">
+                <span class="inline-block px-4 py-1 bg-pink-100 text-brand-pink rounded-full text-xs font-bold tracking-wide uppercase w-fit mb-4">Détails de la création</span>
+                <h3 id="modalTitle" class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-cursive text-brand-orange">Titre</h3>
+                <p class="text-gray-600 mb-4 leading-relaxed text-justify">Découvrez cette création unique et personnalisée. Chaque gâteau est réalisé avec passion dans notre atelier à Lomé, en utilisant des ingrédients frais et de qualité supérieure.</p>
+                <p class="text-gray-600 mb-8 leading-relaxed text-justify">Notre objectif est de garantir une expérience gustative inoubliable pour sublimer vos événements les plus précieux.</p>
+                
+                <button id="modalOrderBtn" onclick="" class="bg-brand-pink text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-orange transition shadow-xl flex items-center justify-center space-x-3 w-full transform hover:-translate-y-1">
+                    <i class="fas fa-cart-plus text-xl"></i>
+                    <span>Commander ce gâteau</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
 <!-- contact-form-js -->
 <script src="https://joekakone.github.io/contact-form-js/script.js"></script>
 <script>
@@ -622,6 +923,84 @@
             icon.classList.remove('fa-times');
         });
     });
+
+    function prefillOrder(subject) {
+        const subjectInput = document.getElementById('InputSubject');
+        if (subjectInput) {
+            subjectInput.value = subject;
+        }
+        const contactSection = document.getElementById('contact');
+        if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+            
+            // Highlight the input briefly
+            if (subjectInput) {
+                subjectInput.focus();
+            }
+        }
+    }
+
+    let currentGallery = [];
+    let currentImageIndex = 0;
+
+    function openModal(title, imageSrc) {
+        document.getElementById('modalTitle').textContent = title;
+        document.getElementById('modalOrderBtn').setAttribute('onclick', `prefillOrder('Commande : ${title.replace(/'/g, "\\\'")}'); closeModal();`);
+        
+        // Populate 4 images for the demo
+        currentGallery = [
+            imageSrc,
+            imageSrc,
+            imageSrc,
+            imageSrc
+        ];
+        currentImageIndex = 0;
+        updateModalImage();
+        
+        const modal = document.getElementById('detailsModal');
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('detailsModal');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function updateModalImage() {
+        document.getElementById('modalMainImage').src = currentGallery[currentImageIndex];
+        
+        const thumbsContainer = document.getElementById('modalThumbnails');
+        thumbsContainer.innerHTML = '';
+        currentGallery.forEach((src, index) => {
+            const thumb = document.createElement('div');
+            thumb.className = `w-14 h-14 rounded-lg border-2 overflow-hidden cursor-pointer transition transform hover:scale-105 ${index === currentImageIndex ? 'border-brand-pink shadow-lg' : 'border-white/50 opacity-70 hover:opacity-100'}`;
+            thumb.onclick = () => {
+                currentImageIndex = index;
+                updateModalImage();
+            };
+            thumb.innerHTML = `<img src="${src}" class="w-full h-full object-cover">`;
+            thumbsContainer.appendChild(thumb);
+        });
+    }
+
+    function prevImage() {
+        currentImageIndex = (currentImageIndex - 1 + currentGallery.length) % currentGallery.length;
+        updateModalImage();
+    }
+
+    function nextImage() {
+        currentImageIndex = (currentImageIndex + 1) % currentGallery.length;
+        updateModalImage();
+    }
+    
+    document.getElementById('detailsModal').addEventListener('click', function(e) {
+        if (e.target === this) {
+            closeModal();
+        }
+    });
+
 </script>
 
 </html>
