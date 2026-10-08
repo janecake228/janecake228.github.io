@@ -104,6 +104,17 @@
                         class="bg-brand-orange text-white border-2 border-brand-orange px-8 py-4 rounded-xl hover:scale-105 font-bold transition shadow-md">Nous
                         contacter</a>
                 </div>
+
+                <div class="mt-8 flex items-center gap-6 text-gray-500 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-[#25D366]"></i>
+                        <span>Livraison à Lomé</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-[#25D366]"></i>
+                        <span>Commande dès 48h</span>
+                    </div>
+                </div>
             </div>
             <div class="relative">
                 <div class="cake-float relative z-10">
@@ -127,7 +138,7 @@
                 <span
                     class="inline-block px-4 py-1 bg-pink-100 text-brand-pink rounded-full text-sm font-bold tracking-wide uppercase mb-4">À
                     propos</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-cursive">Notre Histoire</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-cursive">Notre Savoir-Faire</h2>
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-6 rounded-full"></div>
             </div>
             <div class="grid md:grid-cols-2 gap-16 items-center">
@@ -192,263 +203,383 @@
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-6 rounded-full"></div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Gâteaux -->
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+            <!-- Boutons de filtrage -->
+            <div class="flex flex-wrap justify-center gap-3 mb-14" id="category-filters">
+                <button onclick="filterProducts('all', this)" class="filter-btn active px-6 py-2.5 rounded-full font-semibold text-sm transition bg-brand-pink text-white shadow-md">
+                    Tous nos délices
+                </button>
+                <button onclick="filterProducts('ceremonie', this)" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-white text-gray-700 hover:bg-pink-100 shadow-sm">
+                    Gâteaux d'Événements
+                </button>
+                <button onclick="filterProducts('patisseries', this)" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-white text-gray-700 hover:bg-pink-100 shadow-sm">
+                    Cakes & Entremets
+                </button>
+                <button onclick="filterProducts('minis', this)" class="filter-btn px-6 py-2.5 rounded-full font-semibold text-sm transition bg-white text-gray-700 hover:bg-pink-100 shadow-sm">
+                    Box, Cupcakes & Mignardises
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="product-grid">
+                <!-- 1. Gâteaux d'anniversaire -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="ceremonie">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-birthday-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>7 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Gâteaux d\'anniversaire', ['static/img/catalogue-birthday-cake-1.jpg', 'static/img/catalogue-birthday-cake-2.jpg', 'static/img/catalogue-birthday-cake-3.jpg', 'static/img/catalogue-birthday-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Gâteaux d\'anniversaire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-birthday-cake.jpg" alt="Gâteaux d'anniversaire" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Gâteaux d'anniversaire</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Des créations personnalisées sur-mesure pour célébrer chaque bougie avec éclat.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">7 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Gâteaux d\'anniversaire', ['static/img/catalogue-birthday-cake-1.jpg', 'static/img/catalogue-birthday-cake-2.jpg', 'static/img/catalogue-birthday-cake-3.jpg', 'static/img/catalogue-birthday-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Gâteaux d\'anniversaire')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux d'anniversaire</h3>
-                        <p class="text-gray-600 text-sm">Des créations sur mesure pour souffler vos bougies.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 2. Gâteaux de mariage -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="ceremonie">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-wedding-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>50 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Gâteaux de mariage', ['static/img/catalogue-wedding-cake-1.jpg', 'static/img/catalogue-wedding-cake-2.jpg', 'static/img/catalogue-wedding-cake-3.jpg', 'static/img/catalogue-wedding-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Gâteaux de mariage')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-wedding-cake.jpg" alt="Gâteaux de mariage" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Gâteaux de mariage</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">L'excellence et l'élégance pour célébrer votre grand jour.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">50 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Gâteaux de mariage', ['static/img/catalogue-wedding-cake-1.jpg', 'static/img/catalogue-wedding-cake-2.jpg', 'static/img/catalogue-wedding-cake-3.jpg', 'static/img/catalogue-wedding-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Gâteaux de mariage')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteaux de mariage</h3>
-                        <p class="text-gray-600 text-sm">L'excellence et l'élégance pour célébrer votre grand jour.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 3. Forêt Noire -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="patisseries">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-black-forest.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>15 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Forêt Noire', ['static/img/catalogue-black-forest.jpg', 'static/img/catalogue-black-forest.jpg', 'static/img/catalogue-black-forest.jpg', 'static/img/catalogue-black-forest.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Forêt Noire')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-black-forest.jpg" alt="Forêt Noire" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Forêt Noire</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Le grand classique au chocolat et cerises fondantes.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">15 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Forêt Noire', ['static/img/catalogue-black-forest.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Forêt Noire')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Forêt Noire</h3>
-                        <p class="text-gray-600 text-sm">Le grand classique au chocolat et cerises fondantes.</p>
-                    </div>
                 </div>
-                <!-- Cakes -->
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 4. Layer Cakes -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="patisseries">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-layer-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>20 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Layer Cakes', ['static/img/catalogue-layer-cake-1.jpg', 'static/img/catalogue-layer-cake-2.jpg', 'static/img/catalogue-layer-cake-3.jpg', 'static/img/catalogue-layer-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Layer Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-layer-cake.jpg" alt="Layer Cakes" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Layer Cakes</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Des couches de gourmandise au visuel spectaculaire.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">20 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Layer Cakes', ['static/img/catalogue-layer-cake-1.jpg', 'static/img/catalogue-layer-cake-2.jpg', 'static/img/catalogue-layer-cake-3.jpg', 'static/img/catalogue-layer-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Layer Cakes')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Layer Cakes</h3>
-                        <p class="text-gray-600 text-sm">Des couches de gourmandise au visuel spectaculaire.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 5. Gâteau Mousse -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="patisseries">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-mousse-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>15 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Gâteau Mousse', ['static/img/catalogue-mousse-cake.jpg', 'static/img/catalogue-mousse-cake.jpg', 'static/img/catalogue-mousse-cake.jpg', 'static/img/catalogue-mousse-cake.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Gâteau Mousse')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-mousse-cake.jpg" alt="Gâteau Mousse" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Gâteau Mousse</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Une texture aérienne et légère qui fond en bouche.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">15 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Gâteau Mousse', ['static/img/catalogue-mousse-cake.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Gâteau Mousse')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Gâteau Mousse</h3>
-                        <p class="text-gray-600 text-sm">Une texture aérienne et légère qui fond en bouche.</p>
-                    </div>
                 </div>
-                <!-- Mimi -->
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 6. Tiramisu -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="minis">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-tiramisu.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>3 500 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Tiramisu', ['static/img/catalogue-tiramisu.jpg', 'static/img/catalogue-tiramisu.jpg', 'static/img/catalogue-tiramisu.jpg', 'static/img/catalogue-tiramisu.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Tiramisu')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-tiramisu.jpg" alt="Tiramisu" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Tiramisu</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Une douceur crémeuse aux notes intenses de café.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">3 500 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Tiramisu', ['static/img/catalogue-tiramisu.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Tiramisu')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Tiramisu</h3>
-                        <p class="text-gray-600 text-sm">Une douceur crémeuse aux notes intenses de café.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 7. Box Cakes -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="minis">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-box-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>1 500 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Box Cakes', ['static/img/catalogue-box-cake-1.jpg', 'static/img/catalogue-box-cake-2.jpg', 'static/img/catalogue-box-cake-3.jpg', 'static/img/catalogue-box-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Box Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-box-cake.jpg" alt="Box Cakes" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Box Cakes</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Le coffret idéal à offrir ou à emporter partout.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">1 500 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Box Cakes', ['static/img/catalogue-box-cake-1.jpg', 'static/img/catalogue-box-cake-2.jpg', 'static/img/catalogue-box-cake-3.jpg', 'static/img/catalogue-box-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Box Cakes')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Box Cakes</h3>
-                        <p class="text-gray-600 text-sm">Le coffret idéal à offrir ou à emporter partout.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 8. Cup Cakes -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="minis">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-cup-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>6 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Cup Cakes', ['static/img/catalogue-cup-cake-1.jpg', 'static/img/catalogue-cup-cake-2.jpg', 'static/img/catalogue-cup-cake-3.jpg', 'static/img/catalogue-cup-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Cup Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-cup-cake.jpg" alt="Cup Cakes" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Cup Cakes</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">De petites bouchées décorées, aussi jolies que bonnes.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">6 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Cup Cakes', ['static/img/catalogue-cup-cake-1.jpg', 'static/img/catalogue-cup-cake-2.jpg', 'static/img/catalogue-cup-cake-3.jpg', 'static/img/catalogue-cup-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Cup Cakes')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cup Cakes</h3>
-                        <p class="text-gray-600 text-sm">De petites bouchées décorées, aussi jolies que bonnes.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 9. Donuts -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="minis">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-donuts.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>2 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Donuts', ['static/img/catalogue-donuts-1.jpg', 'static/img/catalogue-donuts-2.jpg', 'static/img/catalogue-donuts-3.jpg', 'static/img/catalogue-donuts-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Donuts')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-donuts.jpg" alt="Donuts" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Donuts</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Moelleux, colorés et parfaits pour le goûter.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">2 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Donuts', ['static/img/catalogue-donuts-1.jpg', 'static/img/catalogue-donuts-2.jpg', 'static/img/catalogue-donuts-3.jpg', 'static/img/catalogue-donuts-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Donuts')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Donuts</h3>
-                        <p class="text-gray-600 text-sm">Moelleux, colorés et parfaits pour le goûter.</p>
-                    </div>
                 </div>
-                <!-- Petits Fours -->
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 10. Cakes -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="patisseries">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-simple-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>4 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Cakes', ['static/img/catalogue-simple-cake-1.jpg', 'static/img/catalogue-simple-cake-2.jpg', 'static/img/catalogue-simple-cake-3.jpg', 'static/img/catalogue-simple-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Cakes')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-simple-cake.jpg" alt="Cakes" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Cakes</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Le goût authentique d'un cake traditionnel fait maison.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">4 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Cakes', ['static/img/catalogue-simple-cake-1.jpg', 'static/img/catalogue-simple-cake-2.jpg', 'static/img/catalogue-simple-cake-3.jpg', 'static/img/catalogue-simple-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Cakes')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cakes</h3>
-                        <p class="text-gray-600 text-sm">Le goût authentique d'un cake traditionnel fait maison.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 11. Cake Marbré -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="patisseries">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-marbre-cake.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>5 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Cake Marbré', ['static/img/catalogue-marbre-cake-1.jpg', 'static/img/catalogue-marbre-cake-2.jpg', 'static/img/catalogue-marbre-cake-3.jpg', 'static/img/catalogue-marbre-cake-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Cake Marbré')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-marbre-cake.jpg" alt="Cake Marbré" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Cake Marbré</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">L'accord parfait entre la vanille douce et le cacao.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">5 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Cake Marbré', ['static/img/catalogue-marbre-cake-1.jpg', 'static/img/catalogue-marbre-cake-2.jpg', 'static/img/catalogue-marbre-cake-3.jpg', 'static/img/catalogue-marbre-cake-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Cake Marbré')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Cake Marbré</h3>
-                        <p class="text-gray-600 text-sm">L'accord parfait entre la vanille douce et le cacao.</p>
-                    </div>
                 </div>
-                <div class="group relative bg-white rounded-3xl overflow-hidden hover:shadow-2xl transition duration-500 transform hover:-translate-y-2 shadow-sm">
+
+                <!-- 12. Mignardises -->
+                <div class="product-card group bg-white rounded-3xl overflow-hidden hover:shadow-xl transition-all duration-300 border border-pink-100/60 flex flex-col justify-between shadow-sm" data-category="minis">
                     <div class="relative overflow-hidden">
-                        <img src="static/img/catalogue-mignardise.jpg" class="w-full h-100 object-cover group-hover:scale-110 transition duration-500">
-                        <span class="absolute bottom-4 left-4 z-10 bg-brand-pink text-white text-xs md:text-sm font-bold px-3.5 py-1.5 rounded-full shadow-lg flex items-center gap-1.5">
-                            <i class="fas fa-tag text-[10px]"></i>
-                            <span>4 000 FCFA</span>
-                        </span>
-                        <div class="absolute bottom-4 right-4 flex space-x-2 z-10">
-                            <button onclick="openModal('Mignardises', ['static/img/catalogue-mignardise-1.jpg', 'static/img/catalogue-mignardise-2.jpg', 'static/img/catalogue-mignardise-3.jpg', 'static/img/catalogue-mignardise-4.jpg'])" class="bg-brand-orange text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-pink transition transform hover:scale-110" title="Voir détails">
-                                <i class="fas fa-eye"></i>
-                            </button>
-                            <button onclick="prefillOrder('Commande : Mignardises')" class="bg-brand-pink text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-brand-orange transition transform hover:scale-110" title="Commander">
-                                <i class="fas fa-cart-plus"></i>
-                            </button>
+                        <img src="static/img/catalogue-mignardise.jpg" alt="Mignardises" class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6 md:p-7 flex flex-col flex-grow justify-between">
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold text-gray-900 mb-2">Mignardises</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed font-normal">Un assortiment de saveurs salées et sucrées pour vos événements.</p>
+                        </div>
+                        <div class="pt-4">
+                            <hr class="border-gray-100 my-4">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <span class="block text-[10px] md:text-[11px] font-bold text-gray-400 uppercase tracking-wider mb-0.5">PRIX</span>
+                                    <span class="text-lg md:text-xl font-extrabold text-brand-orange">4 000 FCFA</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <button onclick="openModal('Mignardises', ['static/img/catalogue-mignardise-1.jpg', 'static/img/catalogue-mignardise-2.jpg', 'static/img/catalogue-mignardise-3.jpg', 'static/img/catalogue-mignardise-4.jpg'])" class="w-11 h-11 rounded-full bg-brand-orange text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-orange-600 transition duration-200" title="Voir détails">
+                                        <i class="fas fa-eye text-sm"></i>
+                                    </button>
+                                    <button onclick="prefillOrder('Commande : Mignardises')" class="w-11 h-11 rounded-full bg-brand-pink text-white flex items-center justify-center shadow-md hover:scale-110 hover:bg-pink-600 transition duration-200" title="Commander">
+                                        <i class="fas fa-cart-plus text-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-xl font-bold mb-2 text-brand-orange">Mignardises</h3>
-                        <p class="text-gray-600 text-sm">Un assortiment de saveurs salées et sucrées pour vos événements</p>
-                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -459,7 +590,7 @@
             <div class="text-center mb-16">
                 <span
                     class="inline-block px-4 py-1 bg-pink-100 text-brand-pink rounded-full text-sm font-bold tracking-wide uppercase mb-4">Étapes</span>
-                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-cursive">Comment ça marche ?</h2>
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 font-cursive">Comment commander ?</h2>
                 <div class="w-24 h-1 bg-brand-orange mx-auto mt-6 rounded-full"></div>
             </div>
 
@@ -573,6 +704,15 @@
                                 class="fas fa-chevron-down"></i></span>
                     </summary>
                     <div class="px-6 pb-6 text-gray-600 text-sm">Oui, livraison dans tout Lomé et ses environs.</div>
+                </details>
+                <details class="group bg-pink-50 rounded-2xl border border-pink-100 overflow-hidden shadow-sm">
+                    <summary
+                        class="flex justify-between items-center p-6 cursor-pointer font-semibold text-gray-800 list-none">
+                        Quelles sont les saveurs et options de garnitures disponibles ?
+                        <span class="transition group-open:rotate-180 text-brand-pink"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-600 text-sm">Vanille, chocolat gourmand, fraise, forêt noire, mousse fruits rouges ou caramel. Nous adaptons le parfum et le visuel selon vos souhaits.</div>
                 </details>
             </div>
         </div>
@@ -793,6 +933,32 @@
             icon.classList.remove('fa-times');
         });
     });
+
+    // Filtrage dynamique du Catalogue
+    function filterProducts(category, btnElement) {
+        const cards = document.querySelectorAll('.product-card');
+        const buttons = document.querySelectorAll('#category-filters .filter-btn');
+
+        buttons.forEach(b => {
+            b.classList.remove('bg-brand-pink', 'text-white', 'shadow-md');
+            b.classList.add('bg-white', 'text-gray-700');
+        });
+
+        if (btnElement) {
+            btnElement.classList.remove('bg-white', 'text-gray-700');
+            btnElement.classList.add('bg-brand-pink', 'text-white', 'shadow-md');
+        }
+
+        cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+                card.classList.remove('hidden');
+                card.classList.add('flex');
+            } else {
+                card.classList.remove('flex');
+                card.classList.add('hidden');
+            }
+        });
+    }
 
     function prefillOrder(subject) {
         const subjectInput = document.getElementById('InputSubject');
